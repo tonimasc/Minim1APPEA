@@ -1,5 +1,16 @@
 <ion-view view-title="Students">
   <ion-content>
+      <ion-list ng-init="load()">
+        <ion-item class="item-avatar item-icon-right" ng-repeat="student in students | orderBy:'name'" type="item-text-wrap" href="#/tab/students/{{student._id}}">
+          <img ng-src="../img/ionic.png">
+          <h2>{{student.name}}</h2>
+          <p>{{student.address}}</p>
+          <i class="icon ion-chevron-left icon-accessory"></i>
 
+          <ion-option-button class="button-assertive" ng-click="DeleteStudent(student._id)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>

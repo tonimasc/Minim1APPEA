@@ -25,10 +25,7 @@ var app = angular.module('starter', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position("bottom");
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
+
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -41,6 +38,7 @@ var app = angular.module('starter', ['ionic'])
   // Each tab has its own nav history stack:
 
   .state('tab.subjects', {
+    cache: false,
     url: '/subjects',
     views: {
       "tab-subjects": {
@@ -50,15 +48,37 @@ var app = angular.module('starter', ['ionic'])
     }
   })
     .state('tab.subjects-detail', {
+      cache: false,
       url: '/subjects/:subjectId',
       views: {
-        "tab-students": {
+        "tab-subjects": {
           templateUrl: 'templates/subjects-detail.html',
           controller: 'SubjectDetailCtrl'
         }
       }
     })
+    .state('tab.subjects-detail-student', {
+      cache: false,
+      url: '/subjects/student/:studentId',
+      views: {
+        "tab-subjects": {
+          templateUrl: 'templates/students-detail.html',
+          controller: 'StudentDetailCtrl'
+        }
+      }
+    })
+    .state('tab.subjects-detail-addstudent', {
+      cache: false,
+      url: '/subjects/addstudent/:subjectID',
+      views: {
+        "tab-subjects": {
+          templateUrl: 'templates/subject-add-student.html',
+          controller: 'SubjectAddStudentCtrl'
+        }
+      }
+    })
   .state('tab.students', {
+      cache: false,
       url: '/students',
       views: {
         "tab-students": {
@@ -68,6 +88,7 @@ var app = angular.module('starter', ['ionic'])
       }
     })
     .state('tab.students-detail', {
+      cache: false,
       url: '/students/:studentId',
       views: {
         "tab-students": {
@@ -76,7 +97,6 @@ var app = angular.module('starter', ['ionic'])
         }
       }
     })
-
   .state('tab.new', {
     url: '/new',
     views: {
