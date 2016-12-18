@@ -1,4 +1,7 @@
 <ion-view view-title="Students">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content>
     <ion-list>
       <ion-item class="item-icon-right" ng-repeat="student in students" href="#/tab/subjects/student/{{student._id}}" type="item-text-wrap">

@@ -1,13 +1,16 @@
 <ion-view view-title="">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
   <ion-nav-buttons side="right">
-    <a class="button" ng-href="#/tab/subjects/addstudent/{{subject._id}}">
+    <a class="button" style="border-color: transparent" ng-href="#/tab/subjects/addstudent/{{subject._id}}">
       <i class="icon ion-person-add"></i>
     </a>
   </ion-nav-buttons>
   <ion-content class="padding">
     <div class="list card">
       <div class="item item-avatar">
-        <img ng-src="../img/ionic.png">
+        <img ng-src="img/subject.png">
         <h2>{{subject.name}}</h2>
         <p>{{subject.when}}</p>
       </div>
