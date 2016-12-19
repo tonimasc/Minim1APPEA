@@ -17,13 +17,13 @@
                 Season
               </div>
               <select ng-model="NewSubject.when">
-                <option>Tardor 2016</option>
+                <option selected>Tardor 2016</option>
                 <option>Primavera 2017</option>
                 <option>Tardor 2017</option>
                 <option>Primavera 2018</option>
               </select>
           </label>
-          <button class="button button-block button-balanced" ng-click="CreateSubject()">
+          <button class="button button-block button-balanced" ng-click="CreateSubject()" ng-disabled="!NewSubject.name || !NewSubject.when">
             Create Subject
           </button>
       </div>
@@ -43,13 +43,13 @@
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Home phone</span>
-          <input type="text"  placeholder="Home phone" ng-model="NewStudent.number1">
+          <input type="tel"  placeholder="Home phone" ng-model="NewStudent.number1">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Work phone</span>
-          <input type="text" placeholder="Work phone" ng-model="NewStudent.number2">
+          <input type="tel" placeholder="Work phone" ng-model="NewStudent.number2">
         </label>
-        <button class="button button-block button-balanced" ng-click="CreateStudent()">
+        <button class="button button-block button-balanced" ng-click="CreateStudent()" ng-disabled="!NewStudent.name || !NewStudent.address || !NewStudent.number1 || !NewStudent.number2">
           Create Student
         </button>
       </div>

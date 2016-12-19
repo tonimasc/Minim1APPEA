@@ -35,7 +35,7 @@ app.controller('StudentDetailCtrl', function($scope, $http,  $stateParams, $ioni
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
       template: '<label>Name</label>'+ '<input type="text" ng-model="Phone.contact">' + '<label>Number</label>' +
-      '<input type="text" ng-model="Phone.number">',
+      '<input type="tel" ng-model="Phone.number">',
       title: 'Contact Information',
       scope: $scope,
       buttons: [
@@ -64,7 +64,7 @@ app.controller('StudentDetailCtrl', function($scope, $http,  $stateParams, $ioni
 
     $timeout(function() {
       myPopup.close(); //close the popup after 3 seconds for some reason
-    }, 7000);
+    }, 1000000);
   };
 
 })

@@ -2,7 +2,9 @@
  * Created by tonim on 16/12/2016.
  */
 app.controller('NewAddCtrl', function($scope, $http, $ionicPopup ) {
-  $scope.NewSubject = {};
+  $scope.NewSubject = {
+    when: 'Tardor 2016'
+  };
   $scope.NewStudent = {
     name: '',
     address: '',

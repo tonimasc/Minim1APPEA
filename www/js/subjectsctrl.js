@@ -50,11 +50,13 @@ app.controller('SubjectsCtrl', function($scope, $http, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
   $scope.showPopup = function() {
-    $scope.Season = {};
+    $scope.Season = {
+      when: 'Tardor 2016'
+    };
 
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
-      template: '<div class="text-center"><label>Use: &nbsp;&nbsp;</label><select ng-model="Season.when"> <option>Tardor 2016</option> <option>Primavera 2017</option> <option>Tardor 2017</option> <option>Primavera 2018</option> </select></div>',
+      template: '<div class="text-center"><label>Use: &nbsp;&nbsp;</label><select ng-model="Season.when"> <option selected>Tardor 2016</option> <option>Primavera 2017</option> <option>Tardor 2017</option> <option>Primavera 2018</option> </select></div>',
       title: 'Season',
       scope: $scope,
       buttons: [
