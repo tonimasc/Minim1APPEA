@@ -11,6 +11,7 @@ app.controller('StudentDetailCtrl', function($scope, $http,  $stateParams, $ioni
     .success(function(data) {
       $scope.student = data;
       $scope.phones = data.phones;
+      $scope.subjects = data.subjects;
       console.log(data);
     })
     .error(function(data) {

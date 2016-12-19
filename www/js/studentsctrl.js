@@ -25,4 +25,28 @@ app.controller('StudentsCtrl', function($scope, $http) {
       });
   };
 
+  $scope.Order = function () {
+    $scope.OrderDo = 'name';
+  };
+  $scope.Order2 = function () {
+    $scope.OrderDo = '-subjects.length';
+  };
+  $scope.Order3 = function () {
+    $scope.OrderDo = '+subjects.length';
+    console.log($scope.OrderDo);
+  };
+
+  $scope.returnAll = function () {
+    $scope.search = {};
+    $http.get( base_url + '/subjects')
+      .success(function(data) {
+        $scope.subjects = data;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+  };
+
+
 })

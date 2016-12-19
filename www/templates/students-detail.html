@@ -24,6 +24,19 @@
             </ion-option-button>
           </ion-item>
         </ion-list>
+        <ion-list>
+          <div class="item item-divider">
+            <i class="icon ion-university"></i>  Subjects Enrolled
+          </div>
+          <ion-item class="item-icon-right" ng-repeat="subject in subjects" type="item-text-wrap">
+            <h2>{{subject.name}}</h2>
+            <i class="icon ion-chevron-left icon-accessory"></i>
+
+            <ion-option-button class="button-assertive" ng-click="RemovePhone(phone._id)">
+              Delete phone
+            </ion-option-button>
+          </ion-item>
+        </ion-list>
       </div>
     </div>
     <div>
